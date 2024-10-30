@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './presentation/routes/App.tsx'
 import { Provider } from 'react-redux'
-import store from './store.ts'
+import store from './application/store/store.ts'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const queryClient = new QueryClient();
