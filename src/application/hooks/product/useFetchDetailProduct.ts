@@ -1,16 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "react-router-dom";
 import { Product } from "../../../domain/entities/Product";
-import serviceEndpointGetDataDetailProduct from "../../services/Product/serviceEndpointGetDataDetailProduct";
+import { getProductDetail } from "../../services/Product/getProductDetail";
+import queryString from "query-string";
+import params from "../../constants/params";
 
 export const useFetchDetailProduct = () => {
     const location = useLocation();
     const queryKey = ['detail', location.search];
-    console.log('queryKey', queryKey);
+
+    const productDetailId = Number(queryString.parse(location.search)?.[params.ID])
 
     return useQuery<Product>({
         queryKey,
-        queryFn: () => serviceEndpointGetDataDetailProduct(location.search),
+        queryFn: () => getProductDetail(productDetailId),
         staleTime: Infinity,
         // cacheTime: Infinity,
         refetchOnWindowFocus: false,

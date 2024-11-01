@@ -1,6 +1,8 @@
-import { Spin } from "antd";
-import { useFetchDetailProduct } from "../../application/hooks/product/useFetchDetailProduct";
-import { Product } from "../../domain/entities/Product";
+import { memo } from "react";
+import Loading from "../../components/loading";
+import Error from "../error";
+import { useFetchDetailProduct } from "../../../application/hooks/product/useFetchDetailProduct";
+import { Product } from "../../../domain/entities/Product";
 
 const DetailProductPage = () => {
     const { data, isLoading, error } = useFetchDetailProduct();
@@ -8,18 +10,14 @@ const DetailProductPage = () => {
 
     if (isLoading) {
         return (
-            <div className="flex items-center justify-center w-full h-screen">
-                <Spin tip="Loading..." size="large"></Spin>
-            </div>
+            <Loading />
         );
     }
 
     if (error) {
-        return <div
-            className="flex items-center justify-center w-full h-screen"
-        >
-            Error: {error.message}
-        </div>;
+        return (
+            <Error />
+        )
     }
 
     return (
@@ -86,4 +84,4 @@ const DetailProductPage = () => {
     );
 };
 
-export default DetailProductPage;
+export default memo(DetailProductPage)

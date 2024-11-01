@@ -1,50 +1,70 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Hướng dẫn thiết lập dự án React Vite
 
-Currently, two official plugins are available:
+## Bước 1: Cài đặt Dependencies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Trước tiên, bạn cần cài đặt các dependencies được liệt kê trong file `package.json` của dự án. Mở terminal và chạy lệnh sau:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Bước 2: Chạy Dự Án
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Sau khi cài đặt xong, bạn có thể chạy dự án trong chế độ phát triển bằng lệnh:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+Dự án sẽ được chạy trên localhost, thường là `http://localhost:3000`.
+
+## Bước 3: Xây Dựng Dự Án
+
+Khi bạn đã hoàn thành việc phát triển và muốn xây dựng ứng dụng để triển khai, bạn có thể sử dụng lệnh sau:
+
+```bash
+npm run build
+```
+
+Lệnh này sẽ tạo ra một thư mục `dist` chứa các file đã được tối ưu hóa cho việc triển khai.
+
+## Bước 4: Chạy Các Lệnh Khác
+
+Bạn có thể chạy các lệnh khác tùy theo yêu cầu của dự án. Dưới đây là một số lệnh thông dụng:
+
+- **Kiểm tra**: Nếu bạn có thiết lập các script kiểm tra trong `package.json`, bạn có thể chạy lệnh:
+  ```bash
+  npm test
+  ```
+
+- **Chạy lệnh**: Nếu bạn muốn chạy một lệnh cụ thể khác mà đã được cấu hình trong `package.json`, hãy sử dụng:
+  ```bash
+  npm run <tên-lệnh>
+  ```
+
+## Dependencies
+
+Dưới đây là danh sách các dependencies của dự án:
+
+- `@reduxjs/toolkit`: ^2.3.0
+- `@tanstack/react-query`: ^5.59.16
+- `antd`: ^5.21.6
+- `axios`: ^1.7.7
+- `learn-tech`: file:
+- `query-string`: ^9.1.1
+- `react`: ^18.3.1
+- `react-dom`: ^18.3.1
+- `react-redux`: ^9.1.2
+- `react-router-dom`: ^6.27.0
+- `redux`: ^5.0.1
+
+## Tài liệu tham khảo
+
+- [Vite Documentation](https://vitejs.dev/guide/)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [Redux Toolkit Documentation](https://redux-toolkit.js.org/introduction/getting-started)
+- [Ant Design Documentation](https://ant.design/docs/react/introduce)
+- [Query String Documentation](https://github.com/sindresorhus/query-string)
+- [TanStack Query Documentation](https://tanstack.com/query/latest/docs/overview)
+- [React Router Documentation](https://reactrouter.com/en/main/start/overview)
