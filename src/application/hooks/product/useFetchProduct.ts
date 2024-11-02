@@ -1,25 +1,21 @@
-import { useQuery } from "@tanstack/react-query";
 import { useLocation } from 'react-router-dom';
-import { ProductsRepository } from "../../../domain/entities/Product";
 import { getProducts } from "../../services/Product/getProducts";
-import { routes } from "../../constants/routes";
+import { routes } from "../../constants/constants.routers";
 import queryString from "query-string";
-import params from "../../constants/params";
+import { params } from "../../constants/constants.params";
+import useFetch from "../common/useFetch";
+import { ProductsRepository } from '../../../presentation/pages/products/types/ProductDetail.Res';
 
 export const useFetchProduct = () => {
-    const location = useLocation();
-    const queryKey = [location.pathname, location.search];
     let category = '';
+    const location = useLocation();
 
     if (location.pathname === routes.category.path) {
         category = queryString.parse(location.search)?.[params.CATEGORY]?.toString() || '';
     }
 
-    return useQuery<ProductsRepository>({
-        queryKey,
-        queryFn: () => getProducts(category),
-        staleTime: Infinity,
-        refetchOnWindowFocus: false,
-        refetchOnMount: false,
-    });
+    return useFetch<ProductsRepository>(
+        ['products', category],
+        () => getProducts(category)
+    );
 };

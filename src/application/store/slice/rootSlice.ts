@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { setRootIdAction } from '../rootAction/setRootIdAction';
-import { clearRootIdAction } from '../rootAction/clearRootIdAction';
+import { setRootIdAction } from '../reducer/root/setRootIdAction';
+import { clearRootIdAction } from '../reducer/root/clearRootIdAction';
 
 export interface RootInitialState {
     value: RootValue;

@@ -1,8 +1,9 @@
-import baseAPI from "../../connectAPI/baseAPI";
+import { ProductDetailRequest } from "../../../presentation/pages/products/types/ProductDetail.Req";
 import endpointsAPI from "../../connectAPI/endpointsAPI";
-import handleTryCatch from "../../helpers/handleTryCatch";
+import handleTryCatch from "../../connectAPI/handleTryCatch";
+import { apiService } from "../../connectAPI/serviceAPI";
 
-export const getProductDetail = async (id?: number) => {
+export const getProductDetail = async (id?: ProductDetailRequest) => {
     return handleTryCatch(async () => {
         // Check if id is provided
         if (id === undefined || id === null) {
@@ -10,8 +11,8 @@ export const getProductDetail = async (id?: number) => {
         }
 
         const endpoint = endpointsAPI.productDetail(id); // Always set endpoint as id is validated
-        const response = await baseAPI.get(endpoint);
+        const response = await apiService(endpoint, 'GET');
 
-        return response.data;
+        return response;
     });
 };

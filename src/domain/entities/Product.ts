@@ -44,10 +44,3 @@ export interface Product {
     images: string[];
     thumbnail: string;
 }
-
-export interface ProductsRepository {
-    products: Product[];
-    total: number;
-    skip: number;
-    limit: number;
-}

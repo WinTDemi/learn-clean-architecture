@@ -1,6 +1,6 @@
 import ProductsPage from '../../presentation/pages/products/productsPage';
-import Error from '../../presentation/components/error';
-import DetailProductPage from '../../presentation/pages/detail product/detailProductPage';
+import DetailProductPage from '../../presentation/pages/detailProduct/detailProductPage';
+import Error from '../../presentation/pages/error';
 
 export const routes = {
     home: {

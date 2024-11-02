@@ -7,31 +7,27 @@ import ProductCard from "../../components/productCard";
 
 const ProductsPage = () => {
 
-    const { data, error, isLoading } = useFetchProduct();
+    const { data, isLoading, isError } = useFetchProduct();
 
     const { products, total } = data || {};
 
-    if (isLoading) {
-        return (
-            <Loading />
-        );
-    }
-
-    if (error) {
-        return (
-            <Error />
-        )
-    }
-
     return (
-        <div className="container p-4 mx-auto">
-            <h2 className="mb-4 text-2xl font-bold capitalize">{total} products</h2>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                {products?.map((product: Product) => (
-                    <ProductCard key={product.id} product={product} /> // Use ProductCard here
-                ))}
-            </div>
-        </div>
+        <>
+            <Error isError={isError} />
+            <Loading isLoading={isLoading} />
+            {
+                !isLoading && !isError && (<div className="container p-4 mx-auto">
+                    <h2 className="mb-4 text-2xl font-bold capitalize">{total} products</h2>
+                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        {products?.map((product: Product) => (
+                            <ProductCard key={product.id} product={product} /> // Use ProductCard here
+                        ))}
+                    </div>
+                </div>)
+            }
+
+        </>
+
     )
 }
 

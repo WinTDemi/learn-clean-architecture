@@ -3,7 +3,7 @@ import Error from "../../components/error"
 
 const ErrorContainer = () => {
     return (
-        <Error />
+        <Error isError={true} />
     )
 }
 

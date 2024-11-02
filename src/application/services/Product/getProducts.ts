@@ -1,6 +1,6 @@
-import baseAPI from "../../connectAPI/baseAPI";
 import endpointsAPI from "../../connectAPI/endpointsAPI";
-import handleTryCatch from "../../helpers/handleTryCatch";
+import handleTryCatch from "../../connectAPI/handleTryCatch";
+import { apiService } from "../../connectAPI/serviceAPI";
 
 export const getProducts = async (category?: string) => {
     return handleTryCatch(async () => {
@@ -8,7 +8,7 @@ export const getProducts = async (category?: string) => {
         if (category) {
             endpoint += `/category/${category}`;
         }
-        const response = await baseAPI.get(endpoint);
-        return response.data;
+        const response = await apiService(endpoint, 'GET');
+        return response;
     });
 };

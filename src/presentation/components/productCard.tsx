@@ -1,8 +1,8 @@
 // ProductCard.tsx
 import { useNavigate } from "react-router-dom";
 import { Product } from "../../domain/entities/Product";
-import { routes } from "../../application/constants/routes";
-import params from "../../application/constants/params";
+import { routes } from "../../application/constants/constants.routers";
+import { params } from "../../application/constants/constants.params";
 
 const ProductCard = ({ product }: { product: Product }) => {
     const navigate = useNavigate();
