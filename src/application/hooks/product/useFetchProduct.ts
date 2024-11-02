@@ -5,9 +5,10 @@ import queryString from "query-string";
 import { params } from "../../constants/constants.params";
 import useFetch from "../common/useFetch";
 import { ProductsRepository } from '../../../presentation/pages/products/types/ProductDetail.Res';
+import { CategoryProductRequest } from '../../../presentation/pages/products/types/Product.Req';
 
 export const useFetchProduct = () => {
-    let category = '';
+    let category: CategoryProductRequest = '';
     const location = useLocation();
 
     if (location.pathname === routes.category.path) {

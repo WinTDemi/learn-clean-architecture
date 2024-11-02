@@ -7,10 +7,10 @@ import useFetch from "../common/useFetch";
 
 export const useFetchDetailProduct = () => {
     const location = useLocation();
-    const productDetailId = Number(queryString.parse(location.search)?.[params.ID]);
+    const productId = Number(queryString?.parse(location.search)?.[params.ID]);
 
     return useFetch<Product>(
-        ['detail', productDetailId],
-        () => getProductDetail(productDetailId)
+        ['detail', productId],
+        () => getProductDetail(productId),
     );
 };

@@ -3,7 +3,7 @@ import endpointsAPI from "../../connectAPI/endpointsAPI";
 import handleTryCatch from "../../connectAPI/handleTryCatch";
 import { apiService } from "../../connectAPI/serviceAPI";
 
-export const getProductDetail = async (id?: ProductDetailRequest) => {
+export const getProductDetail = async (id: ProductDetailRequest) => {
     return handleTryCatch(async () => {
         // Check if id is provided
         if (id === undefined || id === null) {
