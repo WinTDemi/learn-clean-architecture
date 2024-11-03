@@ -1,4 +1,4 @@
 export const params = {
-    ID: '2',
+    ID: 'id',
     CATEGORY: 'category',
 };

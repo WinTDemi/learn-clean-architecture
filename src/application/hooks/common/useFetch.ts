@@ -1,17 +1,19 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
-import { useLocation } from "react-router-dom";
-
+// useFetch<type>(mainKey, param, dataFetchingFn, options?) => [mainKey, param] is the queryKey and () => dataFetchingFn(param) is the queryFn
 const useFetch = <T>(
-    queryKey: any[],
-    queryFn: () => Promise<T>,
-    options: Omit<UseQueryOptions<T, Error, T>, 'queryKey'> = {}
+    mainKey: string,
+    param: string,
+    dataFetchingFn: (param: string) => Promise<T>,
+    // options is an object that contains the options for the useQuery hook
+    // options them cac gia tri mac dinh cua useQuery bang object
+    options: Omit<UseQueryOptions<T, Error, T>, 'queryKey' | 'queryFn'> = {}
 ) => {
-    const location = useLocation();
-    const finalQueryKey = [...queryKey, location.pathname, location.search];
+
+    const queryKey = [mainKey, param];
 
     return useQuery<T>({
-        queryKey: finalQueryKey,
-        queryFn,
+        queryKey,
+        queryFn: () => dataFetchingFn(param),
         staleTime: Infinity,
         refetchOnWindowFocus: false,
         refetchOnMount: false,

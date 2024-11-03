@@ -6,11 +6,6 @@ const App = () => {
   return (
     <Router>
       <Layout>
-        {/* <Routes>
-          <Route index element={<ProductsPage />} />
-          <Route path={routes.CATEGORY} element={<ProductsPage />} />
-          <Route path={routes.DETAIL} element={<DetailProductPage />} />
-        </Routes> */}
         <AppRoute />
       </Layout>
     </Router>

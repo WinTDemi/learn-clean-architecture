@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { getProducts } from "../../services/Product/getProducts";
+import { getProducts } from "../../APIs/apiProducts/getProducts";
 import { routes } from "../../constants/constants.routers";
 import queryString from "query-string";
 import { params } from "../../constants/constants.params";
@@ -11,12 +11,11 @@ export const useFetchProduct = () => {
     let category: CategoryProductRequest = '';
     const location = useLocation();
 
+    // get category from query string if the current path is category 
     if (location.pathname === routes.category.path) {
         category = queryString.parse(location.search)?.[params.CATEGORY]?.toString() || '';
     }
 
-    return useFetch<ProductsRepository>(
-        ['products', category],
-        () => getProducts(category)
-    );
+    // get products by TanStack Query 
+    return useFetch<ProductsRepository>('products', category, getProducts);
 };

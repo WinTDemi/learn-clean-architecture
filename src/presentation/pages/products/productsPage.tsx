@@ -7,16 +7,17 @@ import ProductCard from "../../components/productCard";
 
 const ProductsPage = () => {
 
-    const { data, isLoading, isError } = useFetchProduct();
+    const { data, isLoading, error } = useFetchProduct();
 
     const { products, total } = data || {};
 
     return (
         <>
-            <Error isError={isError} />
+            <Error error={error} />
             <Loading isLoading={isLoading} />
             {
-                !isLoading && !isError && (<div className="container p-4 mx-auto">
+                data &&
+                (<div className="container p-4 mx-auto">
                     <h2 className="mb-4 text-2xl font-bold capitalize">{total} products</h2>
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                         {products?.map((product: Product) => (

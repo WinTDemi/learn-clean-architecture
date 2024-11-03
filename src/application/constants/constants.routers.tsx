@@ -22,5 +22,9 @@ export const routes = {
         name: 'error',
         path: '/error',
         element: <Error />
+    },
+    products: {
+        name: 'products',
+        path: '/products',
     }
 };
