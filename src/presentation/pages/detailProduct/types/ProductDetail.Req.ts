@@ -1,1 +1,1 @@
-export type ProductDetailReq = number;
+export type ProductDetailReq = string;

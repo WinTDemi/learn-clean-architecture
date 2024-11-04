@@ -31,6 +31,7 @@ const requestAPI = async <T>({ path, method, headers = {} as AxiosRequestHeaders
             throw new Error(error.response?.data?.message || error.message || "Unknown API error");
         }
         console.log('Error out axios error');
+        console.error('Unexpected Error:', error);
         throw new Error("An unexpected error occurred");
     }
 };
