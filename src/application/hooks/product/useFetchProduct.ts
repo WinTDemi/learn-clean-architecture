@@ -5,10 +5,10 @@ import queryString from "query-string";
 import { queryParams } from "../../constants/constants.params";
 import useFetch from "../common/useFetch";
 import { ProductsReq } from '../../../presentation/pages/products/types/Product.Req';
-import { CategoryProductRep } from '../../../presentation/pages/products/types/Product.Res';
+import { CategoryProductRes } from '../../../presentation/pages/products/types/Product.Res';
 
 export const useFetchProduct = () => {
-    let category: CategoryProductRep = '';
+    let category: CategoryProductRes = '';
     const location = useLocation();
 
     // get category from query string if the current path is category 

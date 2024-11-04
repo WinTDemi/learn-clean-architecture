@@ -1,2 +1,2 @@
 
-export type ProductDetailRequest = number;
+export type ProductDetailRes = number;

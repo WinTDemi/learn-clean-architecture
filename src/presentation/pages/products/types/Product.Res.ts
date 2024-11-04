@@ -1,1 +1,1 @@
-export type CategoryProductRep = string;
+export type CategoryProductRes = string;
