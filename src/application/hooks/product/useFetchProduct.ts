@@ -4,11 +4,11 @@ import { routes } from "../../constants/constants.routers";
 import queryString from "query-string";
 import { queryParams } from "../../constants/constants.QueryParams";
 import useFetch from "../common/useFetch";
-import { ProductsReq } from '../../../presentation/pages/products/types/Product.Req';
-import { CategoryProductRes } from '../../../presentation/pages/products/types/Product.Res';
+import { ProductsRes } from '../../../presentation/pages/products/types/Product.Res';
+import { CategoryProductReq } from '../../../presentation/pages/products/types/Product.Req';
 
 export const useFetchProduct = () => {
-    let category: CategoryProductRes = '';
+    let category: CategoryProductReq = '';
     const location = useLocation();
 
     // get category from query string if the current path is category 
@@ -17,5 +17,5 @@ export const useFetchProduct = () => {
     }
 
     // get products by TanStack Query 
-    return useFetch<ProductsReq>('products', category, getProducts);
+    return useFetch<ProductsRes>('products', category, getProducts);
 };

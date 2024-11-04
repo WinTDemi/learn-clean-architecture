@@ -1,2 +1,5 @@
+import { Product } from "../../../../application/entities/Product";
 
-export type ProductDetailRes = number;
+export interface DetailProductRes {
+    products: Product
+}
