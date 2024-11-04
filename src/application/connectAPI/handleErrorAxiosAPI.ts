@@ -34,11 +34,10 @@ export const handleErrorAxiosAPI = (error: any) => {
             case 409:
                 return `${status} Conflict: ${message}`;
             default:
-                return `${status || "Unknown status"} ${message}`;
+                return `${status} An unexpected error occurred ${message}`;
         }
     }
     console.error('Unexpected Error:', error);
-    return "An unexpected error occurred";
 }
 // console.log('Error out axios error');
 // throw new Error("An unexpected error occurred");
