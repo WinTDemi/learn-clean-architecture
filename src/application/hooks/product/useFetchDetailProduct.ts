@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { Product } from "../../entities/Product";
 import { getProductDetail } from "../../APIs/apiProducts/getProducts";
 import queryString from "query-string";
-import { queryParams } from "../../constants/constants.params";
+import { queryParams } from "../../constants/constants.QueryParams";
 import useFetch from "../common/useFetch";
 
 export const useFetchDetailProduct = () => {

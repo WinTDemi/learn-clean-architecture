@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { getProducts } from "../../APIs/apiProducts/getProducts";
 import { routes } from "../../constants/constants.routers";
 import queryString from "query-string";
-import { queryParams } from "../../constants/constants.params";
+import { queryParams } from "../../constants/constants.QueryParams";
 import useFetch from "../common/useFetch";
 import { ProductsReq } from '../../../presentation/pages/products/types/Product.Req';
 import { CategoryProductRes } from '../../../presentation/pages/products/types/Product.Res';

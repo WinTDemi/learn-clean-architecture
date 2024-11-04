@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../application/constants/constants.routers";
-import { queryParams } from "../../application/constants/constants.params";
+import { queryParams } from "../../application/constants/constants.QueryParams";
 
 const Categories = () => {
 
