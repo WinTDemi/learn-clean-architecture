@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../application/constants/constants.routers";
-import { params } from "../../application/constants/constants.params";
+import { queryParams } from "../../application/constants/constants.params";
 
 const Categories = () => {
 
@@ -87,7 +87,7 @@ const Categories = () => {
                 {categories.map((category) => (
                     <div key={category.id} className="p-4">
                         <button
-                            onClick={() => navigate(`${routes.category.path}?${params.CATEGORY}=${category.name}`)}
+                            onClick={() => navigate(`${routes.category.path}?${queryParams.CATEGORY_PRODUCTS}=${category.name}`)}
                             className="block w-full p-2 overflow-auto text-gray-600 capitalize hover:text-gray-800 hover:shadow-lg hover:bg-slate-100 text-start"
                         >
                             {category.name}

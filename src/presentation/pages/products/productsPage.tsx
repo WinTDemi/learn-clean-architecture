@@ -1,5 +1,5 @@
 import { useFetchProduct } from "../../../application/hooks/product/useFetchProduct";
-import { Product } from "../../../domain/entities/Product";
+import { Product } from "../../../application/entities/Product";
 import Error from "../../components/error";
 import Loading from "../../components/loading";
 import { memo } from "react";

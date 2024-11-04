@@ -1,8 +1,15 @@
 import ProductsPage from '../../presentation/pages/products/productsPage';
 import DetailProductPage from '../../presentation/pages/detailProduct/detailProductPage';
-import Error from '../../presentation/pages/error';
 
-export const routes = {
+interface Route {
+    [key: string]: {
+        name: string;
+        path: string;
+        element?: JSX.Element;
+    }
+}
+
+export const routes: Route = {
     home: {
         name: 'home',
         path: '/',
@@ -17,11 +24,6 @@ export const routes = {
         name: 'category',
         path: '/category',
         element: <ProductsPage />
-    },
-    error: {
-        name: 'error',
-        path: '/error',
-        element: <Error />
     },
     products: {
         name: 'products',

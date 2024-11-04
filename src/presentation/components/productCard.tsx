@@ -1,19 +1,15 @@
 // ProductCard.tsx
 import { useNavigate } from "react-router-dom";
-import { Product } from "../../domain/entities/Product";
+import { Product } from "../../application/entities/Product";
 import { routes } from "../../application/constants/constants.routers";
-import { params } from "../../application/constants/constants.params";
+import { queryParams } from "../../application/constants/constants.params";
 
 const ProductCard = ({ product }: { product: Product }) => {
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        navigate(`${routes.detail.path}?${params.ID}=${product.id}`);
-    };
-
     return (
         <div
-            onClick={handleClick}
+            onClick={() => navigate(`${routes.detail.path}?${queryParams.DETAIL_PRODUCT_ID}=${product.id}`)}
             className="flex flex-col h-full p-4 bg-white rounded-lg shadow-lg hover:shadow-2xl"
         >
             <img

@@ -1,7 +1,7 @@
 import { memo } from "react";
 import Loading from "../../components/loading";
 import { useFetchDetailProduct } from "../../../application/hooks/product/useFetchDetailProduct";
-import { Product } from "../../../domain/entities/Product";
+import { Product } from "../../../application/entities/Product";
 import Error from "../../components/error";
 
 const DetailProductPage = () => {
