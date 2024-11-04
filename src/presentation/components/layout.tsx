@@ -5,6 +5,7 @@ type LayoutProps = {
     children: ReactNode;
 };
 
+// Layout for the application
 function Layout({ children }: LayoutProps) {
     return (
         <div className='flex'>

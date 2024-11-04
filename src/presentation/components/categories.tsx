@@ -4,7 +4,7 @@ import { queryParams } from "../../application/constants/constants.QueryParams";
 
 const Categories = () => {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // hook navigate to navigate to another page fillter by category
 
     const categories = [
         {

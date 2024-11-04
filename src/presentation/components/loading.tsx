@@ -1,5 +1,6 @@
 import { Spin } from "antd"
 
+// common render loading when porps isLoading is true
 const Loading = ({ isLoading }: { isLoading: boolean }) => {
     if (!isLoading) return null;
 

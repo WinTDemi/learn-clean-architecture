@@ -1,6 +1,6 @@
-// src/domain/entities/Product.ts
-
+// src/application/entities/Product.ts
 interface ProductReview {
+    // review of a product
     rating: number;
     comment: string;
     date: string; // ISO date string
@@ -9,12 +9,14 @@ interface ProductReview {
 }
 
 interface ProductDimensions {
+    // dimensions of a product
     width: number;
     height: number;
     depth: number;
 }
 
 interface ProductMeta {
+    // meta information of a product
     createdAt: string; // ISO date string
     updatedAt: string; // ISO date string
     barcode: string;
@@ -22,6 +24,7 @@ interface ProductMeta {
 }
 
 export interface Product {
+    // details of a product
     id: number;
     title: string;
     description: string;

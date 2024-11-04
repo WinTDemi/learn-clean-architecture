@@ -6,6 +6,7 @@ import Error from "../../components/error";
 
 const DetailProductPage = () => {
 
+    // Fetch detail product from hook TanStack
     const { data, isLoading, error } = useFetchDetailProduct();
 
     const product = data ? data : {} as Product;

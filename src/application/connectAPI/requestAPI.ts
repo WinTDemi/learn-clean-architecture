@@ -8,7 +8,7 @@ interface RequestAPIParams {
     timeout?: number;
 }
 
-const requestAPI = async <T>({ path, method, headers = {} as AxiosRequestHeaders, body = null, timeout = 5000 }: RequestAPIParams): Promise<T> => {
+const requestAPI = async <T>({ path, method, headers = {} as AxiosRequestHeaders, body = null, timeout = 1000 }: RequestAPIParams): Promise<T> => {
     try {
         const response = await axios({
             url: `${import.meta.env.VITE_BASE_API_URL}${path}`,
@@ -20,13 +20,14 @@ const requestAPI = async <T>({ path, method, headers = {} as AxiosRequestHeaders
             data: body,
             timeout: timeout,
         });
-        console.log('response', response);
         return response.data as T;
     } catch (error) {
-        // Ném lỗi để TanStack Query có thể nhận diện
         if (axios.isAxiosError(error)) {
-            console.log('Error axios');
-            console.log(error.response?.data);
+            // try good but error response from server
+            console.error('Error in axios error');
+            console.error(error.response?.data);
+            // throw error message from server or default message back to TanStack Query
+            // Ném lỗi để TanStack Query có thể nhận diện
             throw new Error(error.response?.data?.message || error.message || "Unknown API error");
         }
         console.log('Error out axios error');

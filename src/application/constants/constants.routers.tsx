@@ -10,21 +10,29 @@ interface Route {
 }
 
 export const routes: Route = {
+
+    // route for home page
     home: {
         name: 'home',
         path: '/',
         element: <ProductsPage />
     },
+
+    // route for detail product page
     detail: {
         name: 'detail',
         path: '/detail',
         element: <DetailProductPage />
     },
+
+    // route for category products page
     category: {
         name: 'category',
         path: '/category',
         element: <ProductsPage />
     },
+
+    // route for products for api
     products: {
         name: 'products',
         path: '/products',

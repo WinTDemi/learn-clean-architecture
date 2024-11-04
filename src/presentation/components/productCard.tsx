@@ -5,7 +5,8 @@ import { routes } from "../../application/constants/constants.routers";
 import { queryParams } from "../../application/constants/constants.QueryParams";
 
 const ProductCard = ({ product }: { product: Product }) => {
-    const navigate = useNavigate();
+
+    const navigate = useNavigate(); // Hook to navigate between routes
 
     return (
         <div

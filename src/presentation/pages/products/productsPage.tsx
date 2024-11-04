@@ -7,8 +7,11 @@ import ProductCard from "../../components/productCard";
 
 const ProductsPage = () => {
 
+    // Fetch products from hook TanStack 
+    // error is message error
     const { data, isLoading, error } = useFetchProduct();
 
+    // get list products and total from data TanStack
     const { products, total } = data || {};
 
     return (
