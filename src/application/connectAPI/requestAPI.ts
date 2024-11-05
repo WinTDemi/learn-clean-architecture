@@ -24,7 +24,8 @@ const requestAPI = async <T>({ path, method, headers = {} as AxiosRequestHeaders
             timeout: timeout,
         });
 
-        handleSuccessAPI(response?.status);
+        // handleSuccessAPI(response?.status);
+        response?.status !== 200 && handleSuccessAPI(response?.status);
 
         // console.log(response)
         return response.data as T;

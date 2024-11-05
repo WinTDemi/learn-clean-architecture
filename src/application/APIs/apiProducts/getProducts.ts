@@ -3,7 +3,7 @@ import { DetailProductRes } from "../../../presentation/pages/detailProduct/type
 import { CategoryProductReq } from "../../../presentation/pages/products/types/Product.Req";
 import { ProductsRes } from "../../../presentation/pages/products/types/Product.Res";
 import requestAPI from "../../connectAPI/requestAPI";
-import { routes } from "../../constants/constants.routers";
+import { routes } from "../../constants/constants.Routers";
 
 // get list products by category or all
 export const getProducts = async (category?: CategoryProductReq): Promise<ProductsRes> => {
@@ -22,17 +22,6 @@ export const getProducts = async (category?: CategoryProductReq): Promise<Produc
     return response;
 };
 
-// export const getProducts = async (): Promise<ProductsRes> => {
-//     const path = '/http/404/Hello_Peter'
-
-//     const response = await requestAPI<ProductsRes>({
-//         path,
-//         method: 'GET',
-//     });
-
-//     return response;
-// };
-
 // get detail product by id
 export const getProductDetail = async (id: ProductDetailReq): Promise<DetailProductRes> => {
 
@@ -40,7 +29,6 @@ export const getProductDetail = async (id: ProductDetailReq): Promise<DetailProd
         path: routes.products.path + `/${id}`,
         method: 'GET',
     });
-
     if (!response) {
         throw new Error('No product found');
     }
