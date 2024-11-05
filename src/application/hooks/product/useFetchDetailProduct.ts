@@ -6,7 +6,7 @@ import { getQueryParamFromLocation } from "../../utilities/getQueryParamFromLoca
 
 export const useFetchDetailProduct = () => {
     // Get the product ID from query string
-    const productId = getQueryParamFromLocation(queryParams.DETAIL_PRODUCT_ID)?.toString();
+    const productId = getQueryParamFromLocation(queryParams.DETAIL_PRODUCT_ID);
     // Check for valid product ID
     if (!productId) {
         throw new Error("Invalid product ID");

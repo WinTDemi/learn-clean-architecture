@@ -3,7 +3,7 @@ import { DetailProductRes } from "../../../presentation/pages/detailProduct/type
 import { CategoryProductReq } from "../../../presentation/pages/products/types/Product.Req";
 import { ProductsRes } from "../../../presentation/pages/products/types/Product.Res";
 import requestAPI from "../../connectAPI/requestAPI";
-import { routes } from "../../constants/constants.Routers";
+import { routes } from "../../constants/constants.routers";
 
 // get list products by category or all
 export const getProducts = async (category?: CategoryProductReq): Promise<ProductsRes> => {
