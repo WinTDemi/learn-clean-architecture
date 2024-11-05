@@ -7,71 +7,31 @@ const Categories = () => {
     const navigate = useNavigate(); // hook navigate to navigate to another page fillter by category
 
     const categories = [
-        {
-            id: 1,
-            name: 'beauty'
-        },
-        {
-            id: 2,
-            name: 'fragrances'
-        },
-        {
-            id: 3,
-            name: 'groceries'
-        },
-        {
-            id: 4,
-            name: 'furniture'
-        },
-        {
-            id: 5,
-            name: 'womens-watches'
-        },
-        {
-            id: 6,
-            name: 'womens-dresses'
-        },
-        {
-            id: 7,
-            name: 'womens-bags'
-        },
-        {
-            id: 8,
-            name: 'vehicle'
-        },
-        {
-            id: 9,
-            name: 'tops'
-        },
-        {
-            id: 10,
-            name: 'tablets'
-        },
-        {
-            id: 11,
-            name: 'sunglasses'
-        },
-        {
-            id: 12,
-            name: 'sports-accessories'
-        },
-        {
-            id: 13,
-            name: 'smartphones'
-        },
-        {
-            id: 14,
-            name: 'skin-care'
-        },
-        {
-            id: 15,
-            name: 'motorcycle'
-        },
-        {
-            id: 16,
-            name: 'mobile-accessories'
-        }
-    ]
+        { id: 1, name: "beauty" },
+        { id: 2, name: "fragrances" },
+        { id: 3, name: "furniture" },
+        { id: 4, name: "groceries" },
+        { id: 5, name: "home-decoration" },
+        { id: 6, name: "kitchen-accessories" },
+        { id: 7, name: "laptops" },
+        { id: 8, name: "mens-shirts" },
+        { id: 9, name: "mens-shoes" },
+        { id: 10, name: "mens-watches" },
+        { id: 11, name: "mobile-accessories" },
+        { id: 12, name: "motorcycle" },
+        { id: 13, name: "skin-care" },
+        { id: 14, name: "smartphones" },
+        { id: 15, name: "sports-accessories" },
+        { id: 16, name: "sunglasses" },
+        { id: 17, name: "tablets" },
+        { id: 18, name: "tops" },
+        { id: 19, name: "vehicle" },
+        { id: 20, name: "womens-bags" },
+        { id: 21, name: "womens-dresses" },
+        { id: 22, name: "womens-jewellery" },
+        { id: 23, name: "womens-shoes" },
+        { id: 24, name: "womens-watches" }
+    ];
 
     return (
         <div>
