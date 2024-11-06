@@ -1,5 +1,8 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
-// useFetch<type>(mainKey, param, dataFetchingFn, options?) => [mainKey, param] is the queryKey and () => dataFetchingFn(param) is the queryFn
+// useFetch<type>(mainKey, param, dataFetchingFn, options?) 
+// => [mainKey, param] is the queryKey 
+// and 
+// () => dataFetchingFn(param) is the queryFn
 export const useFetch = <T>(
     mainKey: string,
     param: string,

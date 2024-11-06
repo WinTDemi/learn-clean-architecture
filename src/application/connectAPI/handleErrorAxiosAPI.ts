@@ -2,11 +2,6 @@ import axios from "axios";
 
 export const handleErrorAxiosAPI = (error: any) => {
     if (axios.isAxiosError(error)) {
-        // try good but error response from server
-        // console.error('Error in axios error');
-        // console.error(error.response?.data);
-        // throw error message from server or default message back to TanStack Query
-        // Ném lỗi để TanStack Query có thể nhận diện
         const status = error.response?.status;
         const message = error.response?.data?.message || "Unknown API error";
 
@@ -39,5 +34,3 @@ export const handleErrorAxiosAPI = (error: any) => {
     }
     console.error('Unexpected Error:', error);
 }
-// console.log('Error out axios error');
-// throw new Error("An unexpected error occurred");

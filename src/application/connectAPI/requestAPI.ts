@@ -29,6 +29,7 @@ export const requestAPI = async <T>({ path, method, headers = {} as AxiosRequest
 
         return response.data as T;
     } catch (error) {
+        // kiểm ma lỗi và tra về message lỗi cho TanStack
         throw new Error(handleErrorAxiosAPI(error));
     }
 };
