@@ -1,8 +1,5 @@
 export const handleSuccessAPI = (status?: number) => {
     switch (status) {
-        // case 200:
-        //     alert('200 success');
-        //     break;
         case 201:
             alert('201 created success');
             break;

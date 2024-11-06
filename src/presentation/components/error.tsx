@@ -3,7 +3,7 @@ interface ErrorProps {
 }
 
 // This component is responsible for rendering an error message.
-const Error = ({ error }: ErrorProps) => {
+export const Error = ({ error }: ErrorProps) => {
     if (!error) return null; // If there's no error, return nothing.
 
     return (
@@ -13,5 +13,3 @@ const Error = ({ error }: ErrorProps) => {
         </div>
     );
 }
-
-export default Error;

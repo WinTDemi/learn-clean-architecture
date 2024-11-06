@@ -1,2 +1,2 @@
 // Represents a category product request.
-export type CategoryProductReq = string;
+export type CategoryProductsReq = string;

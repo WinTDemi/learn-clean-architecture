@@ -1,7 +1,7 @@
 import { memo } from "react";
-import Loading from "../../components/loading";
+import { Loading } from "../../components/loading";
 import { useFetchDetailProduct } from "../../../application/hooks/product/useFetchDetailProduct";
-import Error from "../../components/error";
+import { Error } from "../../components/error";
 
 const DetailProductPage = () => {
 

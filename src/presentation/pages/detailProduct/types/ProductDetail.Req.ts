@@ -1,1 +1,1 @@
-export type ProductDetailReq = string;
+export type ProductIDDetailReq = string;

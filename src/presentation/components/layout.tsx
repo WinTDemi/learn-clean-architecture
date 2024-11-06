@@ -5,8 +5,7 @@ type LayoutProps = {
     children: ReactNode;
 };
 
-// Layout for the application
-function Layout({ children }: LayoutProps) {
+export const Layout = ({ children }: LayoutProps) => {
     return (
         <div className='flex'>
             <header className='hidden lg:basis-1/6 lg:block'>
@@ -17,6 +16,4 @@ function Layout({ children }: LayoutProps) {
             </main>
         </div>
     );
-}
-
-export default Layout;
+};
