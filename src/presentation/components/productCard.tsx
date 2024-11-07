@@ -1,16 +1,12 @@
-// ProductCard.tsx
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Product } from "../../application/entities/Product";
 import { routes } from "../../application/constants/constants.routers";
 import { queryParams } from "../../application/constants/constants.QueryParams";
 
 const ProductCard = ({ product }: { product: Product }) => {
-
-    const navigate = useNavigate(); // Hook to navigate between routes
-
     return (
-        <div
-            onClick={() => navigate(`${routes.detail.path}?${queryParams.DETAIL_PRODUCT_ID}=${product.id}`)}
+        <NavLink
+            to={`${routes.detail.path}?${queryParams.DETAIL_PRODUCT_ID}=${product.id}`}
             className="flex flex-col h-full p-4 bg-white rounded-lg shadow-lg hover:shadow-2xl"
         >
             <img
@@ -25,7 +21,7 @@ const ProductCard = ({ product }: { product: Product }) => {
                     <p className="text-green-500">{product.availabilityStatus}</p>
                 </div>
             </div>
-        </div>
+        </NavLink>
     );
 };
 

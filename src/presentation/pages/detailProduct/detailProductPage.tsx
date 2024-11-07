@@ -5,6 +5,8 @@ import { Error } from "../../components/error";
 
 const DetailProductPage = () => {
 
+    // console.log("DetailProductPage component"); // test re-rendering
+
     // Fetch detail product from hook TanStack
     const { data, isLoading, error } = useFetchDetailProduct();
 
@@ -73,8 +75,6 @@ const DetailProductPage = () => {
                         </div>
                     </div>
                 </div>}
-
-
         </>
 
     );

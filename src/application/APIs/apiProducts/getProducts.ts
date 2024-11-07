@@ -17,7 +17,7 @@ export const getProducts = async (categoryProducts?: CategoryProductsReq): Promi
     // if (response.products.length === 0) {
     //     throw new Error(categoryProducts ? `No products found in ${categoryProducts} category` : 'No products found');
     // }
-    // không có sản phẩm không phải lỗi nên không cần throw error
+    // không có sản phẩm không phải lỗi nên không cần throw error 
 
     return response;
 };
