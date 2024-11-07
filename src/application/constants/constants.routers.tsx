@@ -36,5 +36,5 @@ export const routes: Route = {
     products: {
         name: 'products',
         path: '/products',
-    }
+    },
 };
