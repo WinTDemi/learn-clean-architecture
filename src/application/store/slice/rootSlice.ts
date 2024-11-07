@@ -1,25 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { setRootIdAction } from '../reducer/root/setRootIdAction';
 import { clearRootIdAction } from '../reducer/root/clearRootIdAction';
+import { RootInitialState } from '../types/rootType';
 
-export interface RootInitialState {
-    value: RootValue;
-}
-
-interface RootValue {
-    id: number
-}
-
-export interface RootAction {
-    type: string;
-    payload: number;
-}
-
-const initialState = {
+const initialState: RootInitialState = {
     value: {
         id: 0,
-    } as RootValue,
-} as RootInitialState;
+    }
+}
 
 const rootSlice = createSlice({
     name: 'root',

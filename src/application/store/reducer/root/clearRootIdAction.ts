@@ -1,4 +1,4 @@
-import { RootInitialState } from "../../slice/rootSlice";
+import { RootInitialState } from "../../types/rootType"
 
 export const clearRootIdAction = (state: RootInitialState) => {
     state.value.id = 0
