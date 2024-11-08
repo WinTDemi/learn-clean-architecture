@@ -12,6 +12,7 @@ interface RequestAPIParams {
 
 export const requestAPI = async <T>({ path, method, headers = {} as AxiosRequestHeaders, body = null, timeout = 1000 }: RequestAPIParams): Promise<T> => {
     try {
+        // axios chỉ nhận 200 - 299 là thành công từ HTTP status nếu khác sẽ nhảy sang catch
         const response = await axios({
             url: `${import.meta.env.VITE_BASE_API_URL}${path}`,
             method: method,
