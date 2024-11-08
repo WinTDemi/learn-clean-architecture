@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { routes } from "../../application/constants/constants.routers";
 import { queryParams } from "../../application/constants/constants.QueryParams";
-import { memo } from "react";
+// import { memo } from "react";
 
 const Categories = () => {
 
-    // console.log("Categories component"); // test re-rendering
+    console.log("Categories component"); // test re-rendering
 
     // const navigate = useNavigate(); // hook navigate to navigate to another page fillter by category
 
@@ -65,4 +65,5 @@ const Categories = () => {
     )
 }
 
-export default memo(Categories)
+// export default memo(Categories)
+export default Categories // NavLink đã chặn re-rendering nên không cần memo
