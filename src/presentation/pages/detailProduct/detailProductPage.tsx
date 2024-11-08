@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { Loading } from "../../components/loading";
 import { useFetchDetailProduct } from "../../../application/hooks/product/useFetchDetailProduct";
 import { Error } from "../../components/error";
@@ -80,4 +79,4 @@ const DetailProductPage = () => {
     );
 };
 
-export default memo(DetailProductPage)
+export default DetailProductPage

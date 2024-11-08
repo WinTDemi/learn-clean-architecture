@@ -1,7 +1,6 @@
 import { Product } from "../../../application/entities/Product";
 import { Error } from "../../components/error";
 import { Loading } from "../../components/loading";
-import { memo } from "react";
 import ProductCard from "../../components/productCard";
 import { useFetchProducts } from "../../../application/hooks/product/useFetchProducts";
 
@@ -32,4 +31,4 @@ const ProductsPage = () => {
     )
 }
 
-export default memo(ProductsPage)
+export default ProductsPage
